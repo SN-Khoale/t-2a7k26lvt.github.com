@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trường THPT Tổ 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ffffff; /* Đổi màu nền thành trắng */
+            color: #003366; /* Đổi màu chữ thành xanh */
+            padding: 1rem;
+            display: flex; /* Sử dụng Flexbox */
+            align-items: center; /* Căn giữa theo chiều dọc */
+        }
+        header img {
+            width: 100px; /* Kích thước logo */
+            height: auto;
+            margin-right: 1rem; /* Khoảng cách giữa logo và tên trường */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #003366; /* Đổi màu chữ thành xanh */
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            color: #003366; /* Đổi màu chữ thành xanh */
+        }
+        nav {
+            background-color: #0056b3;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #e9ecef;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            margin: 0;
+            color: #003366;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        /* MEMBERS CAROUSEL */
+        .members-wrap {
+            max-width: 1100px;
+            margin: 1.5rem auto 2rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        .members-viewport {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+        .members-track {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1rem 0;
+            align-items: stretch;
+        }
+        .member-card {
+            flex: 0 0 220px;
+            background: linear-gradient(180deg,#87CEEB 0%, #4682B4 100%);
+            color: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            scroll-snap-align: start;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .member-card:hover {
+            transform: scale(1.05); /* Phóng to nhẹ */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng */
+            transition: all 0.3s ease; /* Hiệu ứng mượt */
+        }
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0.8rem auto;
+            border-radius: 50%;
+            background: #fff;
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+        }
+        .member-name {
+            margin-top: 0.6rem;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .member-region {
+            margin-top: 0.25rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.92);
+            background: rgba(255,255,255,0.12);
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            margin-bottom: 0.3rem;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Di chuyển từ dưới lên */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Về vị trí ban đầu */
+            }
+        }
+
+        header, nav, .hero, section, footer {
+            opacity: 0; /* Bắt đầu ẩn */
+            animation: fadeIn 1s ease forwards; /* Hiệu ứng hiện lên */
+        }
+
+        nav {
+            animation-delay: 0.5s; /* Hiện lên sau header */
+        }
+
+        .hero {
+            animation-delay: 1s; /* Hiện lên sau nav */
+        }
+
+        section {
+            animation-delay: 1.5s; /* Hiện lên sau hero */
+        }
+
+        footer {
+            animation-delay: 2s; /* Hiện lên sau section */
+        }
+    </style>
+</head>
+<body>
+    <header>
+    
+        <img src="c:\Users\Khoa-pc\Downloads\z7229213812534_1e95203d29b1a17d7a0311d4b8e971b1.jpg" alt="Logo Trường THPT Lê Văn Thiêm">
+        <div>
+            <h1>Trường THPT Lê Văn Thiêm</h1>
+            <p>Tổ 2-A7k26</p>
+        </div>
+    </header>
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="https://www.thpt-levanthiem.edu.vn" target="_blank">THPT Lê Văn Thiêm</a> <!-- Thêm liên kết -->
+    </nav>
+    <div class="hero" id="home">
+        <h1>Chào mừng đến với Tổ 2 lớp A7k26 THPT Lê Văn Thiêm</h1>
+        <p>Nhiệt huyết, sáng tạo và đoàn kết.</p>
+    </div>
+    <section id="about">
+        <h2>Giới thiệu</h2>
+        <p>Tổ 2 lớp A7 khóa 26 trường THPT Lê Văn Thiêm, 1 tập thể vững mạnh.</p>
+        <p>Các thành viên</p>
+        <div class="members-wrap">
+            <div class="members-viewport" id="membersViewport">
+                <div class="members-track" id="membersTrack">
+                    <!-- 12 members -->
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=1" alt="member 1"></div>
+                        <div class="member-name">Phạm Đồng Tuấn Minh</div>
+                        <div class="member-region">Tổ trưởng thân thiện</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=2" alt="member 2"></div>
+                        <div class="member-name">Lê Thành Trung</div>
+                        <div class="member-region">Tổ phó thân thiện</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=3" alt="member 3"></div>
+                        <div class="member-name">Nguyễn Hoàng Quỳnh Anh</div>
+                        <div class="member-region">Tổ viên vui vẻ</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=4" alt="member 4"></div>
+                        <div class="member-name">Nguyễn Gia Huy</div>
+                        <div class="member-region">Họa sĩ tương lai</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Cầm Thị Hoàng Lan</div>
+                        <div class="member-region">...</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Lê Phạm Minh Khoa</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Bùi Thị Ngọc Thảo</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Nguyễn Hải Phương</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Đỗ Hải Yến</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Huỳnh Thanh Trà</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Hoàng Nhật Anh</div>
+                        <div class="member-region">...</div>
+                    </div>
+                      <div class="member-card">
+                        <div class="member-photo"><img src="https://via.placeholder.com/300x300?text=5" alt="member 5"></div>
+                        <div class="member-name">Nguyễn Hoàng Lâm</div>
+                        <div class="member-region">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Liên hệ</h2>
+        <p>Địa chỉ: Phòng 401 lớp 12A7, trường THPT Lê Văn Thiêm</p>
+        <p>Email: info@truongto2.edu.vn | Điện thoại: +84 123 456 789</p>
+        <div style="margin-top: 1rem;">
+            <a href="https://www.thpt-levanthiem.edu.vn" target="_blank" style="color: #0056b3; text-decoration: none; font-weight: bold;">
+                THPT Lê Văn Thiêm
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Tổ 2. All rights reserved.</p>
+    </footer>
+</body>
+</html>
