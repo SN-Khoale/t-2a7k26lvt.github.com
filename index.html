@@ -4,174 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tổ 2</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #ffffff; /* Đổi màu nền thành trắng */
-            color: #003366; /* Đổi màu chữ thành xanh */
-            padding: 1rem;
-            display: flex; /* Sử dụng Flexbox */
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
-        header img {
-            width: 100px; /* Kích thước logo */
-            height: auto;
-            margin-right: 1rem; /* Khoảng cách giữa logo và tên trường */
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #003366; /* Đổi màu chữ thành xanh */
-        }
-        header p {
-            margin: 0;
-            font-size: 1rem;
-            color: #003366; /* Đổi màu chữ thành xanh */
-        }
-        nav {
-            background-color: #0056b3;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background-color: #e9ecef;
-            padding: 2rem;
-            text-align: center;
-        }
-        .hero h1 {
-            margin: 0;
-            color: #003366;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #333;
-        }
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        footer {
-            background-color: #003366;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        /* MEMBERS CAROUSEL */
-        .members-wrap {
-            max-width: 1100px;
-            margin: 1.5rem auto 2rem;
-            position: relative;
-            padding: 0 2rem;
-        }
-        .members-viewport {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-        }
-        .members-track {
-            display: flex;
-            gap: 1.25rem;
-            padding: 1rem 0;
-            align-items: stretch;
-        }
-        .member-card {
-            flex: 0 0 220px;
-            background: linear-gradient(180deg,#87CEEB 0%, #4682B4 100%);
-            color: #fff;
-            border-radius: 12px;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-            scroll-snap-align: start;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-        }
-        .member-card:hover {
-            transform: scale(1.05); /* Phóng to nhẹ */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng */
-            transition: all 0.3s ease; /* Hiệu ứng mượt */
-        }
-        .member-photo {
-            width: 120px;
-            height: 120px;
-            margin: 0.8rem auto;
-            border-radius: 50%;
-            background: #fff;
-            padding: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .member-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 50%;
-        }
-        .member-name {
-            margin-top: 0.6rem;
-            font-weight: 700;
-            color: #fff;
-            font-size: 1rem;
-        }
-        .member-region {
-            margin-top: 0.25rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.92);
-            background: rgba(255,255,255,0.12);
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 999px;
-            margin-bottom: 0.3rem;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px); /* Di chuyển từ dưới lên */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0); /* Về vị trí ban đầu */
-            }
-        }
+   <style>
+    * {
+        box-sizing: border-box;
+    }
 
-        header, nav, .hero, section, footer {
-            opacity: 0; /* Bắt đầu ẩn */
-            animation: fadeIn 1s ease forwards; /* Hiệu ứng hiện lên */
-        }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f7fb;
+        color: #1f2937;
+    }
 
-        nav {
-            animation-delay: 0.5s; /* Hiện lên sau header */
-        }
+    /* HEADER */
+    header {
+        background-color: #ffffff;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e5e7eb;
+    }
 
-        .hero {
-            animation-delay: 1s; /* Hiện lên sau nav */
-        }
+    header img {
+        width: 90px;
+        margin-right: 1rem;
+    }
 
-        section {
-            animation-delay: 1.5s; /* Hiện lên sau hero */
-        }
+    header h1 {
+        margin: 0;
+        font-size: 1.7rem;
+        color: #1f4fd8;
+    }
 
-        footer {
-            animation-delay: 2s; /* Hiện lên sau section */
+    header p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #6b7280;
+    }
+
+    /* NAV */
+    nav {
+        background-color: #1f4fd8;
+        display: flex;
+        justify-content: center;
+        padding: 0.6rem;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        opacity: 0.9;
+        transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+        opacity: 1;
+    }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, #e8eeff, #f5f7fb);
+        padding: 2.5rem 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        margin: 0;
+        color: #1f4fd8;
+    }
+
+    .hero p {
+        font-size: 1.15rem;
+        color: #374151;
+        margin-top: 0.5rem;
+    }
+
+    /* SECTION */
+    section {
+        padding: 2.5rem 1rem;
+        text-align: center;
+    }
+
+    section h2 {
+        color: #1f4fd8;
+        margin-bottom: 1rem;
+    }
+
+    /* MEMBERS */
+    .members-wrap {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .members-viewport {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .members-track {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .member-card {
+        flex: 0 0 220px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 1rem;
+        text-align: center;
+        scroll-snap-align: start;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+
+    .member-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 32px rgba(31,79,216,0.25);
+    }
+
+    .member-photo {
+        width: 120px;
+        height: 120px;
+        margin: 0.8rem auto;
+        border-radius: 50%;
+        background: #e8eeff;
+        padding: 6px;
+        overflow: hidden;
+    }
+
+    .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .member-name {
+        margin-top: 0.6rem;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #1f4fd8;
+    }
+
+    .member-region {
+        margin-top: 0.4rem;
+        font-size: 0.85rem;
+        color: #1f4fd8;
+        background-color: #e8eeff;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+    }
+
+    /* FOOTER */
+    footer {
+        background-color: #163a9f;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* FADE IN */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
         }
-    </style>
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    header, nav, .hero, section, footer {
+        animation: fadeIn 1s ease forwards;
+    }
+</style>
+
 </head>
 <body>
     <header>
@@ -190,7 +205,7 @@
     </nav>
     <div class="hero" id="home">
         <h1>Chào mừng đến với Tổ 2 lớp A7k26 THPT Lê Văn Thiêm</h1>
-        <p>Nhiệt huyết, sáng tạo và đoàn kết.</p>
+        <p>Nhiệt huyết, hài hước, sáng tạo và đoàn kết.</p>
     </div>
     <section id="about">
         <h2>Giới thiệu</h2>
@@ -279,6 +294,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
